@@ -17,8 +17,8 @@ read -p "$path, is this correct? [Y/N]
 case $y in
 	y)
 		mkdir /home/$user/Desktop/lib
-		echo "path="$path"" > /home/$user/Desktop/lib/AutoGitFilePath.txt
-		echo "user="$user"" > /home/$user/Desktop/lib/AutoGitUser.txt
+		echo "path=$path" > /home/$user/Desktop/lib/AutoGitFilePath.txt
+		echo "user=$user" > /home/$user/Desktop/lib/AutoGitUser.txt
 		;;
 	n)
 		echo "Exiting Program..."
