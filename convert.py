@@ -1,5 +1,5 @@
 #Celsius to Fahrenheit Conversion Script
-#Morgan Precanico
+#Morgan P.
 #11/14/2018
 
 

@@ -1,5 +1,5 @@
 #Greeting Script
-#Morgan Precanico
+#Morgan P.
 #11/15/18
 
 

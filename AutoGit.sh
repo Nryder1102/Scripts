@@ -1,5 +1,5 @@
 #!/bin/bash
-#Morgan Precanico
+#Morgan P.
 #11/14/18
 #Github Automation
 
