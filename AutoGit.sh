@@ -10,7 +10,7 @@ case $n in
 	n)
 read -p "Please enter your PC's username so the script can make a library folder
 > " user
-read -p "Please enter the absolute file path to your github folder 
+read -p "Please enter the absolute file path to your github folder. If your folder has a space in it's name, please use a wildcard symbol after the starting 2-4 letters of it's name, so it won't accidentally pick up other folders. 
 > " path
 read -p "$path, is this correct? [Y/N]
 > " y
