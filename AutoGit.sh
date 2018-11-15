@@ -18,15 +18,23 @@ case $y in
 	y)
 		mkdir /home/$user/Desktop/lib
 		echo "path="$path"" > /home/$user/Desktop/lib/AutoGitFilePath.txt
+		echo "user="$user"" > /home/$user/Desktop/lib/AutoGitUser.txt
 		;;
 	n)
 		echo "Exiting Program..."
+		exit
 		;;
 esac
 ;;
 
 	y)
-source AutoGitFilePath.txt
+		cd
+                source */lib/AutoGitUser.txt
+		source */lib/AutoGitFilePath.txt
+	     
+	     ;;
+
+esac
 cd $path
 git add .
 read -p "Description for the changes?
