@@ -1,3 +1,6 @@
+#Morgan P.
+#Dec. 11, 2018
+
 def main():
 	win = GraphWin("Test", 1000, 1000)
 	shape = Rectangle(Point(50,50), Point(100,100))

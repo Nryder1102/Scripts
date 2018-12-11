@@ -1,0 +1,37 @@
+def main():
+	win = GraphWin("Test", 1000, 1000)
+	shape = Rectangle(Point(50,50), Point(100,100))
+	shape.setOutline("dark green")
+	shape.setFill("lime green")
+	shape.draw(win)
+	Shape = Rectangle(Point(300,170),Point(-170,-300))
+	Shape.setOutline("light blue")
+	Shape.setFill("white")
+	Shape.setWidth(15)
+	clcklist = ["10","20","35","49","55","68","79","82","99","100","150","178","250"]
+	randmclick = random.choice(clcklist)
+	rangeclick = eval(randmclick)
+	for i in range(rangeclick):
+		p = win.getMouse()
+		c = shape.getCenter()
+		dx = p.getX() - c.getX()
+		dy = p.getY() - c.getY()
+		shapetwo = shape.clone()
+		filllist = ["magenta","black","teal","light blue","cyan"]
+		outlist = ["purple","cyan","teal","black","sky blue","turquoise"]
+		widlist = ["1","2","3","4","5","6","7","8","9","10","20"]
+		fillvar = random.choice(filllist)
+		outvar = random.choice(outlist)
+		widvar = random.choice(widlist)
+		shapetwo.setFill(fillvar)
+		shapetwo.setOutline(outvar)
+		shapetwo.setWidth(widvar)
+		shapetwo.draw(win)
+		shapetwo.move(dx,dy)
+	Shape.draw(win)
+	Shape.move(dx,dy)
+	t = Text(Point(dx,dy), "Click once more to end")
+	t.draw(win)
+	win.getMouse()
+	win.getMouse()
+	win.close()
