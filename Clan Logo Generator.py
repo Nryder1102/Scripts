@@ -1,0 +1,53 @@
+def main():
+	win = GraphWin("Test", 1000, 1000)
+	shape = Rectangle(Point(50,50), Point(100,100))
+	shape.setOutline("dark green")
+	shape.setFill("lime green")
+	shape.draw(win)
+	Shape = Rectangle(Point(300,170),Point(-170,-300))
+	Shape.setOutline("light blue")
+	Shape.setFill("white")
+	Shape.setWidth(15)
+	clcklist = ["10","20","35","49","55","68","79","82","99","100","150","178","250"]
+	randmclick = choice(clcklist)
+	rangeclick = eval(randmclick)
+	for i in range(rangeclick):
+		p = win.getMouse()
+		c = shape.getCenter()
+		dx = p.getX() - c.getX()
+		dy = p.getY() - c.getY()
+		pnty = randrange(-250, 250)
+		pntx = randrange(-250, 250)
+		pntz = (pntx - pnty + 1)
+		pntlisttwo = [pnty, pntx, pntz]
+		pone = choice(pntlisttwo)
+		ptwo = choice(pntlisttwo)
+		pthree = choice(pntlisttwo)
+		pfour = choice(pntlisttwo)
+		pfive = choice(pntlisttwo)
+		psix = choice(pntlisttwo)
+		rndmshapeone = Rectangle(Point(pone,pone), Point(ptwo,ptwo))
+		rndmshapetwo = Circle(Point(pthree,pthree), pfour)
+		rndmshapethree = Polygon(Point(pfive,pfour), Point(psix,pone), Point(ptwo,pthree), Point(pfive,pthree), Point(ptwo,pfour), Point(pone,psix), Point(pone,ptwo), Point(pfour,pfive))
+		shapetwolist = [rndmshapeone, rndmshapetwo, rndmshapethree]
+		filllist = ["magenta","black","teal","light blue","cyan"]
+		outlist = ["purple","cyan","teal","black","sky blue","turquoise"]
+		widlist = ["1","2","3","4","5","6","7","8","9","10","20"]
+		shapetwovar = choice(shapetwolist)
+		fillvar = choice(filllist)
+		outvar = choice(outlist)
+		widvar = choice(widlist)
+		shapetwo = shapetwovar
+		shapetwo.setFill(fillvar)
+		shapetwo.setOutline(outvar)
+		shapetwo.setWidth(widvar)
+		shapethree = shapetwo.clone()
+		shapethree.move(dx,dy)
+		shapethree.draw(win)
+	Shape.draw(win)
+	Shape.move(dx,dy)
+	t = Text(Point(dx,dy), "Click once more to end")
+	t.draw(win)
+	win.getMouse()
+	win.getMouse()
+	win.close()
