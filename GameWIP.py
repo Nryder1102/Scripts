@@ -29,6 +29,7 @@ def main():
 	enemy1.setOutline("white")
 	enemy1.setWidth(5)
 	enemy1state = 15
+	e1drawstate = 0
 	key = win.getKey()
 	if key == "Return":
 		t.undraw()
@@ -64,14 +65,25 @@ def main():
 			shapeup.undraw()
 			shapeleft.draw(win)
 			shapestate = "shapeleft.draw(win)"
-		enemy = randrange(0,8)
+		enemy = randrange(0,4)
+		test = 4
 		if enemy == 1:
-			enemy1state = enemy1state - 1
-			while enemy1state != 15:
+			if e1drawstate == 0:
 				enemy1.draw(win)
-				enemy1.move(10,0)
-				enemy1state = enemy1state + 1
-				#elif enemy == 4:
+				e1drawstate = 1
+			elif e1drawstate == 1:
+				enemy1state = (enemy1state) - 4
+				while enemy1state != 15:
+					test = (test) + 1
+					enemy1state = enemy1state + 4
+					while test == 5:
+						test = (test) - 1
+						for i in range(5):
+							enemy1.move(10,0)
+							test = (test) + 1
+							
+
+			#elif enemy == 4:
 		#	enemy2 = Circle(Point(500, 0), 25)
 		#	enemy2.setFill("white")
 		#	enemy2.setOutline("dark gray")
