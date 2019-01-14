@@ -57,20 +57,35 @@ def main():
     e1drawstate = 0
     e1movestate = 0
     enemy2 = Circle(Point(500, 0), 25)
-    enemy2.setFill("white")
+    enemy2.setFill("black")
     enemy2.setOutline("dark gray")
     enemy2.setWidth(5)
     enemy2state = 15
     e2drawstate = 0
     e2movestate = 0
+    enemy3 = Rectangle(Point(-20,500), Point(20,460))
+    enemy3.setFill("black")
+    enemy3.setWidth(0.5)
+    enemy3state = 15
+    e3drawstate = 0
+    e3movestate = 0
+    enemy4 = Rectangle(Point(-15,-500), Point(15,-470))
+    enemy4.setFill("black")
+    enemy4.setWidth(0.5)
+    enemy4state = 15
+    e4drawstate = 0
+    e4movestate = 0
     power5 = Rectangle(Point(-10,500), Point(10,480))
     power5.setFill("silver")
+    power5.setOutline("purple")
     power5state = 15
     p5drawstate = 0
     p5movestate = 0
     buffer = 0
     buffer2 = 0
     buffer3 = 0
+    buffer4 = 0
+    buffer5 = 0
     armorstate = 0
     key = win.getKey()
 
@@ -104,6 +119,8 @@ def main():
                 shapestate = "shapeup.draw(win)"
                 e1movestate = 1
                 e2movestate = 1
+                e3movestate = 1
+                e4movestate = 1
                 p5movestate = 1
                # enemy1spawncheck(enemy)
                # e1move(e1drawstate)
@@ -125,6 +142,8 @@ def main():
                 shapestate = "shaperight.draw(win)"
                 e1movestate = 1
                 e2movestate = 1
+                e3movestate = 1
+                e4movestate = 1
                 p5movestate = 1
               #  enemy1spawncheck(enemy)
               #  e1move(e1drawstate)
@@ -146,6 +165,8 @@ def main():
                 shapestate = "shapedown.draw(win)"
                 e1movestate = 1
                 e2movestate = 1
+                e3movestate = 1
+                e4movestate = 1
                 p5movestate = 1
                # enemy1spawncheck(enemy)
              #   e1move(e1drawstate)
@@ -167,6 +188,8 @@ def main():
                 shapestate = "shapeleft.draw(win)"
                 e1movestate = 1
                 e2movestate = 1
+                e3movestate = 1
+                e4movestate = 1
                 p5movestate = 1
            
                # enemy1spawncheck(enemy)
@@ -174,6 +197,9 @@ def main():
     #Block to randomize enemy spawning, currently effects movement as well,
     #Trying to make movement happen every time a key is pressed instead
 
+
+
+            #Enemy 1 Spawn + Move
             if enemy == 1 and e1drawstate == 0:
                 enemy1.setFill("dark gray")
                 enemy1.setOutline("white")
@@ -203,10 +229,7 @@ def main():
                         enemy1.draw(win)
 
                   
-                        
-                        
-                        
-
+            #Enemy 2 Spawn + Move
             if enemy == 2 and e2drawstate == 0:
                 enemy2.setFill("white")
                 enemy2.setOutline("dark gray")
@@ -232,19 +255,76 @@ def main():
                         enemy2.setOutline("#1c1c1c")
                         enemy2.draw(win)
 
-                    
 
 
+            #Enemy 3 Spawn + Move
+            if enemy == 3 and e3drawstate == 0:
+                    enemy3.setFill("black")
+                    enemy3.setOutline("black")
+                    enemy3.draw(win)
+                    e3drawstate = 1
+
+            if e3drawstate == 1:
+                if e3movestate == 1:
+                    for i in range(1):
+                        enemy3.move(0,-25)
+                        buffer3 = (buffer3) + 1
+                        print(buffer3)
+                        e3movestate = 0
+
+                if buffer3 == 14:
+                        shaperot.undraw()
+                        shaperot.setOutline("#4d4d4d")
+                        shaperot.setFill("black")
+                        shaperot.draw(win)                 
+
+                if buffer3 == 14 or buffer == 35 or buffer2 == 30 or buffer4 == 7 and e3drawstate == 1:
+                        enemy3.undraw()
+                        enemy3.setFill("#6b0703")
+                        enemy3.setOutline("#6b0703")
+                        enemy3.draw(win)
+                elif buffer3 != 14 and buffer != 35 and buffer2 != 30 and e3drawstate == 1:
+                        enemy3.undraw()
+                        enemy3.setFill("black")
+                        enemy3.setOutline("black")
+                        enemy3.draw(win)
 
 
+            #Enemy 4 Spawn + Move
+            if enemy == 4 and e4drawstate == 0:
+                    enemy4.setFill("black")
+                    enemy4.setOutline("black")
+                    enemy4.draw(win)
+                    e4drawstate = 1
+
+            if e4drawstate == 1:
+                if e4movestate == 1:
+                    for i in range(1):
+                        enemy4.move(0,50)
+                        buffer4 = (buffer4) + 1
+                        print(buffer4)
+                        e4movestate = 0
+
+                if buffer4 == 7:
+                        shaperot.undraw()
+                        shaperot.setOutline("#4d4d4d")
+                        shaperot.setFill("black")
+                        shaperot.draw(win)                 
+
+                if buffer4 == 7 or buffer3 == 14 or buffer == 35 or buffer2 == 30 and e4drawstate == 1:
+                        enemy4.undraw()
+                        enemy4.setFill("#6b0703")
+                        enemy4.setOutline("#6b0703")
+                        enemy4.draw(win)
+
+                elif buffer4 != 7 and buffer3 != 14 and buffer != 35 and buffer2 != 30 and e4drawstate == 1:
+                        enemy4.undraw()
+                        enemy4.setFill("black")
+                        enemy4.setOutline("black")
+                        enemy4.draw(win)
 
 
-
-
-
-
-
-
+            #Power 1(5) Spawn + Move
             if enemy == 5 and p5drawstate == 0:
                     power5.draw(win)
                     p5drawstate = 1
@@ -254,11 +334,11 @@ def main():
                 if p5movestate == 1:
                     for i in range(1):
                         power5.move(0,-10)
-                        buffer3 = (buffer3) + 1
+                        buffer5 = (buffer5) + 1
                        # print(buffer3)
                         p5movestate = 0
 
-                if buffer3 == 40:
+                if buffer5 == 40:
                         shaperot.undraw()
                         shaperot.setOutline("silver")
                         shaperot.setFill("purple")
@@ -272,7 +352,7 @@ def main():
                         power5.undraw()
                         power5.move(0,-100)
                         power5.move(0,500)
-                        buffer3 = 0
+                        buffer5 = 0
                         p5drawstate = 0
 
 
@@ -293,6 +373,16 @@ def main():
             elif buffer == 35 and buffer2 == 30:
                 enemy2.move(100,0)
                 buffer2 = (buffer2) - 10
+            elif buffer == 35 and buffer3 == 14:
+                enemy3.move(0,25)
+                buffer3 = (buffer3) - 1
+            elif buffer2 == 30 and buffer3 == 14:
+                enemy3.move(0,25)
+                buffer3 = (buffer3) - 1
+            elif buffer4 == 7 and buffer3 == 14:
+                enemy3.move(0,25)
+                buffer3 = (buffer3) - 1
+            
                 
             elif key != "Left" and buffer == 40 and armorstate == 0:
                 shapedown.undraw()
@@ -354,16 +444,89 @@ def main():
                 armor.undraw()
                 armor.setText("ARMOR: " + str(arm))
                 armor.draw(win)
+
+
+
+
+            if key == "Up" and buffer3 == 15:
+                enemy3.undraw()
+                buffer3 = 0
+                e3drawstate = 0
+                enemy3.move(0,-100)
+                enemy3.move(0,475)
+                pts = int(pts) + 1
+                score.undraw()
+                score.setText("SCORE: " + str(pts))
+                score.draw(win)
+                        
+            elif key != "Up" and buffer3 == 15 and armorstate == 0:
+                shapedown.undraw()
+                shapeleft.undraw()
+                shaperight.undraw()
+                shapeup.undraw()
+                enemy3.move(0,-100)
+                tfour.draw(win)
+                win.getMouse()
+                win.close()
+
+            elif armorstate != 0 and buffer3 == 15:
+                enemy3.undraw()
+                buffer3 = 0
+                e3drawstate = 0
+                enemy3.move(0,-100)
+                enemy3.move(0,500)
+                armorstate = (armorstate) - 1
+                arm = int(arm) - 1
+                armor.undraw()
+                armor.setText("ARMOR: " + str(arm))
+                armor.draw(win)
+
+
+
+
+
+            if key == "Down" and buffer4 == 8:
+                enemy4.undraw()
+                buffer4 = 0
+                e4drawstate = 0
+                enemy4.move(0,100)
+                enemy4.move(0,-500)
+                pts = int(pts) + 1
+                score.undraw()
+                score.setText("SCORE: " + str(pts))
+                score.draw(win)
+                        
+            elif key != "Down" and buffer4 == 8 and armorstate == 0:
+                shapedown.undraw()
+                shapeleft.undraw()
+                shaperight.undraw()
+                shapeup.undraw()
+                enemy4.move(0,100)
+                tfour.draw(win)
+                win.getMouse()
+                win.close()
+
+            elif armorstate != 0 and buffer4 == 8:
+                enemy4.undraw()
+                buffer4 = 0
+                e4drawstate = 0
+                enemy4.move(0,100)
+                enemy4.move(0,-500)
+                armorstate = (armorstate) - 1
+                arm = int(arm) - 1
+                armor.undraw()
+                armor.setText("ARMOR: " + str(arm))
+                armor.draw(win)
            
                 
-            if buffer == 0 or buffer2 == 0 or buffer3 == 0:
+            if buffer == 0 or buffer2 == 0 or buffer3 == 0 or buffer4 == 0:
                 win.setBackground("black")
-            if buffer == 35 or buffer2 == 30:
+            if buffer == 35 or buffer2 == 30 or buffer3 == 14 or buffer4 == 7:
                 win.setBackground("#a30202")
-
+            
                 
 
-
-
+        
+        
         win.getMouse()
         win.close()
