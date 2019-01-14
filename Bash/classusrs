@@ -1,0 +1,27 @@
+#!/bin/bash
+#Morgan Precanico
+#2018
+
+clear
+cat << EOF
+Classmates' Usernames:
+cefaau21: Austin
+whitay21: Ayanna
+amelch21: Christopher
+jonede21: Devante
+nerodo21: Dorean
+lundga21: Gavin
+livehu21: Hunter
+lambja21: Jackson
+folsje21: Jenna
+harvje21: Jennifer
+slatjo21: John
+pedrjo21: Joshua
+zincks21: Ksenia
+hamilo21: Logan
+tosima21: Mac
+iserph21: Pheonix
+mrr: Mr. Richardson
+mrg: Mr. Grimsley
+
+EOF

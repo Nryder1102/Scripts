@@ -1,0 +1,162 @@
+#!/bin/bash
+#Morgan Precanico
+#2018
+
+
+
+#Ask if you would like to use an existing connection
+read -p "Existing Connection? >" y
+
+#Setup auto connections here
+case $y in
+y)
+#cat Documents/lib/autocon/con1.txt | $connect1
+#echo "$connect1"
+echo  " 1. Deepthought(MP)"
+echo  " 2. (Unknown)"
+echo  " 3. (Unknown)"
+echo  " 4. (Unknown)"
+echo  " 5. (Unknown)"
+echo  " 6. (Unknown)"
+echo  " 7. (Unknown)"
+echo  " 8. (Unknown)"
+echo  " 9. (Unknown)"
+echo "10. (Unknown)"
+echo "11. (Unknown)"
+echo "12. (Unknown)"
+read -p "> " s
+
+#Put auto connections here
+case $s in
+
+1)
+ssh -p 4200 precmo21@deepthought.wtahs.com
+;;
+
+2)
+ssh 
+;;
+    
+3)
+ssh 
+;;
+
+4) 
+ssh 
+;;
+
+5)
+ssh 
+;;
+
+6)
+ssh 
+;;
+
+7)
+ssh 
+;;
+
+8)
+ssh 
+;;
+
+9)
+ssh 
+;;
+	
+10)
+ssh 
+;;
+
+11)
+ssh 
+;;
+
+12)
+ssh
+;;
+
+*)
+exit
+;;
+
+esac
+;;
+
+#Asks for new connection info
+n)
+read -p "Port? >" a
+read -p "Username? >" b
+read -p "Address? >" c
+read -p "$b@$c on port $a is where you wish to connect? " d
+case $d in
+
+yes)
+read -p "Would you like to save this connection? [Yes/No]" save
+
+#case $save in
+#	yes)
+#exec 
+
+echo Connecting...
+ssh -p $a $b@$c
+;;
+
+y)
+echo Connecting...
+ssh -p $a $b@$c
+;;
+
+no)
+echo Exiting Script...
+exit
+;;
+
+n)
+echo Exiting Script...
+exit
+;;
+
+*)
+echo Connecting...
+ssh -p $a $b@$c
+;;
+esac
+;;
+
+#Asks for new connection info(x2)
+*)
+read -p "Port? >" a
+read -p "Username? >" b
+read -p "Address? >" c
+read -p "$b@$c on port $a is where you wish to connect? " d
+case $d in
+
+yes)
+echo Connecting...
+ssh -p $a $b@$c
+;;
+
+y)
+echo Connecting...
+ssh -p $a $b@$c
+;;
+
+no)
+echo Exiting Script...
+exit
+;;
+
+n)
+echo Exiting Script...
+exit
+;;
+
+*)
+echo Connecting...
+ssh -p $a $b@$c
+;;
+esac
+;;
+esac

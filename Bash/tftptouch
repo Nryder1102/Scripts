@@ -1,0 +1,8 @@
+#!/bin/bash
+#Morgan Precanico
+
+read -p "What is the name of the file before -confg? > " cfg
+
+touch /var/lib/tftpboot/$cfg-confg
+chmod 777 /var/lib/tftpboot/$cfg-confg
+echo "TFTP File Ready | Name: $cfg-confg"

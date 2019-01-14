@@ -1,0 +1,5 @@
+#!/bin/bash
+#Morgan Precanico
+#2018
+
+putty -load "Serial Preset"

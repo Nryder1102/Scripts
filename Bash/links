@@ -1,0 +1,20 @@
+#!/bin/bash
+#Morgan Precanico
+#2018
+
+clear 
+cat << EOF
+
+Helpful Web Development Links:
+https://www.w3schools.com/html/ - Has tutorials covering a wide range of topics including HTML, CSS, JAVASCRIPT, and more!
+
+
+Helpful Networking Links:
+
+
+
+
+
+EOF
+
+

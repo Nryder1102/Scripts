@@ -1,0 +1,205 @@
+#!/bin/bash
+#Morgan Precanico
+#2018
+
+
+echo "Netmask Generator"
+read -p "Netmask? (/1-/32)> " n
+
+h="255"
+g="254"
+f="252"
+e="248"
+d="240"
+c="224"
+b="192"
+a="128"
+
+case $n in
+
+/1)
+echo "
+Netmask is $a.0.0.0
+"
+;;
+/2)
+echo "
+Netmask is $b.0.0.0
+"
+;;
+/3)
+echo "
+Netmask is $c.0.0.0
+"
+;;
+/4)
+echo "
+Netmask is $d.0.0.0
+"
+;;
+/5)
+echo "
+Netmask is $e.0.0.0
+"
+;;
+/6)
+echo "
+Netmask is $f.0.0.0
+"
+;;
+/7)
+echo "
+Netmask is $g.0.0.0
+"
+;;
+/8) 
+echo "
+Netmask is $h.0.0.0
+"
+;;
+/9)
+echo "
+Netmask is $h.$a.0.0
+"
+;;
+/10)
+echo "
+Netmask is $h.$b.0.0
+"
+;;
+/11)
+echo "
+Netmask is $h.$c.0.0
+"
+;;
+/12)
+echo "
+Netmask is $h.$d.0.0
+"
+;;
+/13)
+echo "
+Netmask is $h.$e.0.0
+"
+;;
+/14)
+echo "
+Netmask is $h.$f.0.0
+"
+;;
+/15)
+echo "
+Netmask is $h.$g.0.0
+"
+;;
+/16)
+echo "
+Netmask is $h.$h.0.0
+"
+;;
+/17)
+echo "
+Netmask is $h.$h.$a.0
+"
+;;
+/18)
+echo "
+Netmask is $h.$h.$b.0
+"
+;;
+/19)
+echo "
+Netmask is $h.$h.$c.0
+"
+;;
+/20)
+echo "
+Netmask is $h.$h.$d.0
+"
+;;
+/21)
+echo "
+Netmask is $h.$h.$e.0
+"
+;;
+/22)
+echo "
+Netmask is $h.$h.$f.0
+"
+;;
+/23)
+echo "
+Netmask is $h.$h.$g.0
+"
+;;
+/24)
+echo "
+Netmask is $h.$h.$h.0
+"
+;;
+/25)
+echo "
+Netmask is $h.$h.$h.$a
+"
+;;
+/26)
+echo "
+Netmask is $h.$h.$h.$b
+"
+;;
+/27)
+echo "
+Netmask is $h.$h.$h.$c
+"
+;;
+/28)
+echo "
+Netmask is $h.$h.$h.$d
+"
+;;
+/29)
+echo "
+Netmask is $h.$h.$h.$e
+"
+;;
+/30)
+echo "
+Netmask is $h.$h.$h.$f
+"
+;;
+/31)
+echo "
+Netmask is $h.$h.$h.$g
+"
+;;
+/32)
+echo "
+Netmask is $h.$h.$h.$h
+"
+;;
+*)
+clear
+echo "
+Invalid Option, try again"
+exec netgen
+;;
+esac
+
+read -p "Continue? [Y/N] 
+>" conf
+
+case $conf in
+
+y)
+exec netgen
+;;
+
+n)
+exit
+;;
+
+*) 
+exit
+;;
+esac
+esac

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+echo "Binary Calculator"
+read -p "
+Which tool would you like to use? 
+
+1. Binary to Number
+2. Number to Binary
+> " tool
+
+case $tool in
+
+1)
+exec binkey
+;;
+  
+2)
+  
+;;
+esac

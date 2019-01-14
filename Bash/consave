@@ -1,0 +1,6 @@
+#!/bin/bash
+#Morgan Precanico 
+#2018
+
+read -p "Which save slot?[1-9]" slot
+case 

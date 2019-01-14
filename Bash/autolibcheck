@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat Documents/lib/autocon/dir.txt
+
+case $a in
+
+"cat: Documents/lib/autocon/dir.txt: No such file or directory")
+echo Not Working!
+;;
+esac
+
+echo test
+echo $a

@@ -1,0 +1,16 @@
+#!/bin/bash
+#Morgan Precanico Nov. 2 2018
+
+sudo apt upgrade
+sudo apt update
+sudo apt autoremove
+sudo apt install gufw
+sudo apt install mlocate
+sudo apt remove freeciv*
+cd /
+mlocate .mp3
+mlocate .wav
+mlocate .png
+mlocate .jpg
+mlocate .jpeg
+sudo gedit etc/pam.d/common-password
