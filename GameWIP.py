@@ -119,7 +119,7 @@ def main():
                     shapeup.setFill("light blue")
                     shapeup.setWidth(0)
                 elif armorstate != 0:
-                    shapecenter.setFill("lime green")
+                    shapecenter.setFill("green")
                     shapecenter.setOutline("silver")
                     shapeup.setFill("purple")
                     shapeup.setOutline("silver")
@@ -148,7 +148,7 @@ def main():
                     shaperight.setFill("dark red")
                     shaperight.setWidth(0)
                 elif armorstate != 0:
-                    shapecenter.setFill("lime green")
+                    shapecenter.setFill("green")
                     shapecenter.setOutline("silver")
                     shaperight.setFill("purple")
                     shaperight.setOutline("silver")
@@ -177,7 +177,7 @@ def main():
                     shapedown.setFill("sky blue")
                     shapedown.setWidth(0)
                 elif armorstate != 0:
-                    shapecenter.setFill("lime green")
+                    shapecenter.setFill("green")
                     shapecenter.setOutline("silver")
                     shapedown.setFill("purple")
                     shapedown.setOutline("silver")
@@ -206,7 +206,7 @@ def main():
                     shapeleft.setFill("red")
                     shapeleft.setWidth(0)
                 elif armorstate != 0:
-                    shapecenter.setFill("lime green")
+                    shapecenter.setFill("green")
                     shapecenter.setOutline("silver")
                     shapeleft.setFill("purple")
                     shapeleft.setOutline("silver")
@@ -597,3 +597,4 @@ def main():
         
         win.getMouse()
         win.close()
+main()
